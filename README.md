@@ -1,4 +1,4 @@
-# omp-no-slop
+# slop-stop
 
 omp rule pack against LLM comment slop. Two layers:
 
@@ -12,7 +12,7 @@ omp rule pack against LLM comment slop. Two layers:
 ## Install
 
 ```sh
-omp plugin link /path/to/omp-no-slop   # local checkout
+omp plugin link /path/to/slop-stop   # local checkout
 # or: omp install <this-repo>
 ```
 
@@ -43,5 +43,5 @@ An interrupt is recoverable: the model rewrites the hunk without the flagged phr
 
 ```sh
 omp config set ttsr.disabledRules '["no-dashes"]'   # drop one rule
-omp plugin disable omp-no-slop                      # drop the pack
+omp plugin disable slop-stop                        # drop the pack
 ```
