@@ -8,11 +8,13 @@ All-in-one omp pack for better LLM output: no comment slop, no reply slop, dense
 | --- | --- | --- |
 | `rules/comment-policy.md` | contract (always-apply) | Code comments: public API docs, non-obvious WHY, and required pragmas only |
 | `rules/response-style.md` | contract (always-apply) | Replies: answer first, numbered steps, one next action, no filler/hedging/preamble/closers, concrete estimates, matter-of-fact errors |
+| `rules/commit-policy.md` | contract (always-apply) | Commit/PR messages: imperative concrete subject under 72 chars, WHY-only body |
 | `rules/no-slop-comments.md` | TTSR on `edit`/`write` | Narrative comments, code-restating, diff commentary, placeholder elisions, banners, ownerless TODOs |
 | `rules/no-prose-slop.md` | TTSR on `text` | Sycophancy ("Great question", "You're absolutely right"), closers ("Hope this helps"), throat-clearing, apology slop |
+| `rules/no-slop-commits.md` | TTSR on `bash` | Dashes and vague subjects ("wip", "various improvements") in `git commit` / `gh pr` commands, blocked before the command runs |
 | `rules/no-dashes.md` | TTSR on `text` + `edit`/`write` | Em/en dashes anywhere |
 
-On a TTSR match the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries. Contracts cost ~350 tokens per request; enforcement costs one re-generation per trigger.
+On a TTSR match the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries; tool-stream matches abort before the command executes. Contracts cost ~400 tokens per request; enforcement costs one re-generation per trigger.
 
 ## Install
 
