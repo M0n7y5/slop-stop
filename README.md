@@ -9,12 +9,15 @@ All-in-one omp pack for better LLM output: no comment slop, no reply slop, dense
 | `rules/comment-policy.md` | contract (always-apply) | Code comments: public API docs, non-obvious WHY, and required pragmas only |
 | `rules/response-style.md` | contract (always-apply) | Replies: answer first, numbered steps, one next action, no filler/hedging/preamble/closers, concrete estimates, matter-of-fact errors |
 | `rules/commit-policy.md` | contract (always-apply) | Commit/PR messages: imperative concrete subject under 72 chars, WHY-only body |
+| `rules/code-style.md` | contract (always-apply) | Code: nothing speculative, no single-use abstractions, surgical changes that trace to the request, what-not-how names |
+| `rules/test-style.md` | contract (always-apply) | Tests: name the bug they catch, hand-derived expectations, no mock-assertions, condition waits over sleeps, silent output |
 | `rules/no-slop-comments.md` | TTSR on `edit`/`write` | Narrative comments, code-restating, diff commentary, placeholder elisions, banners, ownerless TODOs |
 | `rules/no-prose-slop.md` | TTSR on `text` | Sycophancy ("Great question", "You're absolutely right"), closers ("Hope this helps"), throat-clearing, apology slop |
 | `rules/no-slop-commits.md` | TTSR on `bash` | Dashes and vague subjects ("wip", "various improvements") in `git commit` / `gh pr` commands, blocked before the command runs |
+| `rules/no-slop-tests.md` | TTSR on `edit`/`write` of test paths | Tautologies (`expect(true).toBe(true)`), empty test bodies, mirror assertions, sleep-based waits (`time.sleep`, `page.waitForTimeout`) |
 | `rules/no-dashes.md` | TTSR on `text` + `edit`/`write` | Em/en dashes anywhere |
 
-On a TTSR match the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries; tool-stream matches abort before the command executes. Contracts cost ~400 tokens per request; enforcement costs one re-generation per trigger.
+On a TTSR match the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries; tool-stream matches abort before the command executes. Contracts cost ~700 tokens per request; enforcement costs one re-generation per trigger.
 
 ## Install
 
@@ -54,11 +57,11 @@ omp config set ttsr.disabledRules '["no-dashes"]'   # drop one TTSR rule
 omp plugin disable slop-stop                        # drop the whole pack
 ```
 
-Contracts (`comment-policy`, `response-style`) have no per-rule toggle; delete or edit the file.
+Contracts (`comment-policy`, `response-style`, `code-style`, `test-style`, `commit-policy`) have no per-rule toggle; delete or edit the file.
 
 ## Credits
 
-Response-style rules adapted from [i-have-adhd](https://github.com/ayghri/i-have-adhd) (structure: action first, numbered steps, visible progress) and [concise](https://github.com/o4f6bgpac3/concise) (density: filler and hedging removal, answer-first pattern). Both MIT.
+Adapted, all MIT: [i-have-adhd](https://github.com/ayghri/i-have-adhd) (reply structure: action first, numbered steps, visible progress), [concise](https://github.com/o4f6bgpac3/concise) (reply density: filler and hedging removal, answer-first pattern), [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) (code discipline: nothing speculative, surgical changes), [superpowers](https://github.com/obra/superpowers) (test honesty: name the break, no mirror asserts, condition waits; weasel-claim bans). Workflow and process content from those projects was deliberately not taken: the omp harness owns workflow.
 
 ## License
 

@@ -13,6 +13,7 @@ condition:
   - '(?:^|\n)[ \t]*(?://|#|--)[ \t]*[=~*-]{5,}'
   - '(?i)(?:^|\n)[ \t]*(?://|#|--)[ \t]*(?:todo|fixme):?[ \t]+(?:implement|add|fix|handle|finish|complete)\b'
   - '(?i)(?:^|\n)[ \t]*(?://|#|--)[ \t]+(?:this (?:function|method|class|module) (?:is responsible for|handles|is used to|will|takes|returns|creates|defines|implements|provides|checks)\b|(?:a |the )?helper (?:function|method|class) (?:to|for|that)\b|(?:function|method) (?:to|that)\b)'
+  - '(?i)(?:^|\n)[ \t]*(?://|#|--)[ \t]*(?:add (?:appropriate |proper |more |some )?(?:error handling|validation)|handle edge cases)[ \t]*\.?[ \t]*(?:\n|$)'
 ---
 
 You wrote a slop comment. It was discarded. Rewrite the edit without it.
