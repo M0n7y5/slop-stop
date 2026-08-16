@@ -1,0 +1,9 @@
+{
+  "name": "omp-no-slop",
+  "version": "0.1.0",
+  "description": "omp rule pack against comment slop: always-on contract plus TTSR stream enforcement for narrative comments, diff commentary, placeholder elisions, banners, and em-dashes",
+  "license": "MIT",
+  "omp": {
+    "extensions": ["./index.ts"]
+  }
+}
