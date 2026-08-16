@@ -1,19 +1,20 @@
 ---
 description: Interrupts on tautological, empty, mirror, or sleep-based tests
 scope: "tool:edit(*), tool:write(*)"
-globs: ["*test*", "*spec*", "**/tests/**", "**/test/**", "**/__tests__/**"]
+globs: ["*test*", "*Test*", "*TEST*", "*spec*", "*Spec*", "**/*test*/**", "**/*Test*/**", "**/*spec*/**", "**/*Spec*/**"]
 interruptMode: always
 condition:
-  - 'expect\(true\)\.toBe\(true\)|expect\(1\)\.toBe\(1\)|assertTrue\(\s*true\s*\)|\bassert True[ \t]*(?:\n|$)'
-  - '(?:^|\n)[ \t]*(?:it|test)\(\s*[''"][^''"\n]+[''"]\s*,\s*(?:async\s*)?\(\s*\)\s*=>\s*\{\s*\}\s*\)'
+  - '(?i)\b(?:assert|expect|check)[._]?(?:is)?true\s*\(\s*true\s*\)|expect\(true\)\.toBe\(true\)|expect\(\s*true\s*,\s*(?:isTrue|true)\s*\)|expect\(1\)\.toBe\(1\)|\bassert True[ \t]*(?:\n|$)|\bassert\s*\(\s*true\s*\)\s*;'
+  - '(?:^|\n)[ \t]*(?:it|test|testWidgets)\(\s*[''"][^''"\n]+[''"]\s*,\s*(?:async\s*)?\(\s*\)\s*(?:=>\s*)?\{\s*\}\s*[,)]'
   - 'expect\(\s*(\w+)\([^()\n]*\)\s*\)\s*\.\s*to(?:Be|Equal|StrictEqual|MatchObject)\(\s*\1\('
-  - '(?:time|asyncio)\.sleep\(|Thread\.sleep\(|page\.waitForTimeout\('
+  - '(?i)\b(?:assert[._]?(?:are)?equals?|(?:expect|assert)_eq|expect|check)\s*\(\s*(\w+)\([^()\n]*\)\s*,\s*\1\('
+  - '(?i)\bthread\.sleep\(|\btask\.delay\(|\bfuture\.delayed\(|(?:time|asyncio)\.sleep\(|\bsleep_for\(|\busleep\(|page\.waitForTimeout\('
 ---
 
 You wrote a slop test. It was discarded. Rewrite it.
 
-- Tautology (`expect(true).toBe(true)`, `assert True`) or an empty test body: the test must assert real behavior, or not exist.
-- Mirror assertion (expected value computed by the code under test): derive the expectation by hand as a literal or fixture.
-- Sleep-based waiting (`time.sleep`, `Thread.sleep`, `page.waitForTimeout`): wait for the actual condition. A sleep is valid only when time itself is under test, with a WHY comment.
+- Tautology (`Assert.True(true)`, `EXPECT_TRUE(true)`, `expect(true, isTrue)`, `assert True`) or an empty test body: the test must assert real behavior, or not exist.
+- Mirror assertion (expected value computed by the same code under test, any framework): derive the expectation by hand as a literal or fixture.
+- Sleep-based waiting (`Thread.Sleep`, `Task.Delay`, `Future.delayed`, `time.sleep`, `sleep_for`, `page.waitForTimeout`): wait for the actual condition. A sleep is valid only when time itself is under test, with a WHY comment.
 
 A test earns its place by naming the production bug it would catch.
