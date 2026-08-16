@@ -1,7 +1,7 @@
 {
   "name": "slop-stop",
-  "version": "0.1.0",
-  "description": "omp rule pack against comment slop: always-on contract plus TTSR stream enforcement for narrative comments, diff commentary, placeholder elisions, banners, and em-dashes",
+  "version": "0.2.0",
+  "description": "All-in-one omp pack for better LLM output: comment discipline, dense actionable replies, and TTSR stream enforcement against comment slop, prose slop, and em-dashes",
   "license": "MIT",
   "omp": {
     "extensions": ["./index.ts"]

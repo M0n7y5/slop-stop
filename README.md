@@ -1,13 +1,18 @@
 # slop-stop
 
-omp rule pack against LLM comment slop. Two layers:
+All-in-one omp pack for better LLM output: no comment slop, no reply slop, dense and actionable responses. Two mechanisms per concern: an always-injected contract that tells the model what good output is, and TTSR (Time-Traveling Stream Rules) enforcement that aborts, discards, and retries generation the moment slop appears in the live stream.
 
-1. `rules/comment-policy.md` (always-apply): injected into every system prompt. Comments are allowed only for public API docs, non-obvious WHY (invariants, workarounds with issue links, safety/perf constraints), and required machinery (pragmas, license headers). Bans narration, code-restating, diff commentary, placeholder elisions, banners, ownerless TODOs, em/en dashes, semicolon-chained prose.
-2. TTSR enforcement (Time-Traveling Stream Rules), matched against the model's live output:
-   - `rules/no-slop-comments.md`: fires on slop comments in `edit`/`write` streams.
-   - `rules/no-dashes.md`: fires on em/en dashes in prose and written files.
+## Layers
 
-   On match, generation is aborted, the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries.
+| File | Kind | Governs |
+| --- | --- | --- |
+| `rules/comment-policy.md` | contract (always-apply) | Code comments: public API docs, non-obvious WHY, and required pragmas only |
+| `rules/response-style.md` | contract (always-apply) | Replies: answer first, numbered steps, one next action, no filler/hedging/preamble/closers, concrete estimates, matter-of-fact errors |
+| `rules/no-slop-comments.md` | TTSR on `edit`/`write` | Narrative comments, code-restating, diff commentary, placeholder elisions, banners, ownerless TODOs |
+| `rules/no-prose-slop.md` | TTSR on `text` | Sycophancy ("Great question", "You're absolutely right"), closers ("Hope this helps"), throat-clearing, apology slop |
+| `rules/no-dashes.md` | TTSR on `text` + `edit`/`write` | Em/en dashes anywhere |
+
+On a TTSR match the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries. Contracts cost ~350 tokens per request; enforcement costs one re-generation per trigger.
 
 ## Install
 
@@ -28,6 +33,7 @@ omp config set ttsr.repeatGap 5
 ```sh
 omp ttsr list
 echo '// Now we initialize the client' | omp ttsr test --rule rules/no-slop-comments.md --file - --source tool --tool edit --path src/foo.ts
+echo 'Hope this helps!' | omp ttsr test --rule rules/no-prose-slop.md --file - --source text
 omp ttsr scan src/   # find pre-existing slop in a repo
 ```
 
@@ -35,13 +41,23 @@ omp ttsr scan src/   # find pre-existing slop in a repo
 
 - Ruby/YARD API docs of the form `# Returns the ...` (verb-plus-article pattern).
 - Tutorial markdown headings like `# First, install dependencies` or `# Create a new project`.
-- Legit em/en dashes in prose files the model rewrites (the point of the rule).
+- Quoting third-party prose that itself contains slop phrases or dashes.
 
-An interrupt is recoverable: the model rewrites the hunk without the flagged phrase. Tune by editing the `condition` lists or narrowing `scope` globs (e.g. `tool:edit(*.py)`), then re-run `omp ttsr test`.
+An interrupt is recoverable: the model rewrites without the flagged phrase. Tune by editing `condition` lists or narrowing `scope` globs, then re-run `omp ttsr test`.
 
 ## Disable
 
 ```sh
-omp config set ttsr.disabledRules '["no-dashes"]'   # drop one rule
-omp plugin disable slop-stop                        # drop the pack
+omp config set ttsr.disabledRules '["no-dashes"]'   # drop one TTSR rule
+omp plugin disable slop-stop                        # drop the whole pack
 ```
+
+Contracts (`comment-policy`, `response-style`) have no per-rule toggle; delete or edit the file.
+
+## Credits
+
+Response-style rules adapted from [i-have-adhd](https://github.com/ayghri/i-have-adhd) (structure: action first, numbered steps, visible progress) and [concise](https://github.com/o4f6bgpac3/concise) (density: filler and hedging removal, answer-first pattern). Both MIT.
+
+## License
+
+MIT.
