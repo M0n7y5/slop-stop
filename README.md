@@ -33,6 +33,10 @@ omp config set ttsr.repeatMode after-gap
 omp config set ttsr.repeatGap 5
 ```
 
+## Commands
+
+`/tighten-agents [file]` rewrites the project's `AGENTS.md` (or `CLAUDE.md`): preserves every project fact, deletes filler and vague guidance, makes rules concrete, and syncs one heading-anchored `## Output discipline (slop-stop)` section with condensed contracts so non-omp harnesses inherit them. Idempotent: re-runs replace the section in place.
+
 ## Test
 
 ```sh
