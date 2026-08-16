@@ -8,6 +8,8 @@ condition:
   - '(?:^|\n)[ \t]*(?:it|test|testWidgets)\(\s*[''"][^''"\n]+[''"]\s*,\s*(?:async\s*)?\(\s*\)\s*(?:=>\s*)?\{\s*\}\s*[,)]'
   - 'expect\(\s*(\w+)\([^()\n]*\)\s*\)\s*\.\s*to(?:Be|Equal|StrictEqual|MatchObject)\(\s*\1\('
   - '(?i)\b(?:assert[._]?(?:are)?equals?|(?:expect|assert)_eq|expect|check)\s*\(\s*(\w+)\([^()\n]*\)\s*,\s*\1\('
+  - '(?i)\b(?:assert|expect)\w*\s*\(\s*(\w+)\([^()\n]*\)\s*==\s*\1\('
+  - '\[(?:Test|Fact|TestMethod)[^\]]*\]\s*(?:public\s+|private\s+|internal\s+|static\s+|async\s+)*(?:void|Task)\s+\w+\s*\(\s*\)\s*\{\s*\}'
   - '(?i)\bthread\.sleep\(|\btask\.delay\(|\bfuture\.delayed\(|(?:time|asyncio)\.sleep\(|\bsleep_for\(|\busleep\(|page\.waitForTimeout\('
 ---
 
