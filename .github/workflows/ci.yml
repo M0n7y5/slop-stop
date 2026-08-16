@@ -1,0 +1,13 @@
+name: evals
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  ttsr-corpus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun add -g @oh-my-pi/pi-coding-agent
+      - run: bun evals/run.ts

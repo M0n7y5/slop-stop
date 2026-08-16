@@ -42,13 +42,15 @@ echo 'Hope this helps!' | omp ttsr test --rule rules/no-prose-slop.md --file - -
 omp ttsr scan src/   # find pre-existing slop in a repo
 ```
 
+Regression corpus: `evals/cases.jsonl` replays 144 slop/legit cases through the real matcher (scope and glob gates included). Run `bun evals/run.ts` after any `condition` or `globs` change; CI runs it on every push.
+
 ## Known false-positive classes (accepted)
 
 - Ruby/YARD API docs of the form `# Returns the ...` (verb-plus-article pattern).
 - Tutorial markdown headings like `# First, install dependencies` or `# Create a new project`.
 - Quoting third-party prose that itself contains slop phrases or dashes.
 
-An interrupt is recoverable: the model rewrites without the flagged phrase. Tune by editing `condition` lists or narrowing `scope` globs, then re-run `omp ttsr test`.
+An interrupt is recoverable: the model rewrites without the flagged phrase. Tune by editing `condition` lists or narrowing `scope` globs, then re-run `bun evals/run.ts`.
 
 ## Disable
 

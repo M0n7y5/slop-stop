@@ -1,0 +1,144 @@
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// Now we initialize the client","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"  // First, parse the header","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# Let's define the model","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"-- then we join the tables","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// Increment the counter","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# Check if the file exists","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// loop through the items","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# Iterate over each user","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// added retry logic","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# Changed the default to 5","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// renamed from oldFunc","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// ... rest of the code remains the same","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"  // existing code unchanged","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# same as above","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"    // ...","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# ==========================","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// ----- helpers -----","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// TODO: implement error handling","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# TODO implement caching","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// We can simply return early","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// This function handles user auth","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# Helper function to format dates","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// Create a new user record","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# Initialize the database connection","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// Finally, we return the result","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// add error handling","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"# TODO: handle edge cases","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// add validation.","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// SAFETY: caller holds the lock","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"# NOTE: O(n^2) acceptable, n <= 32","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"for (let i = 0; i < n; i++) {","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"const url = \"https://example.com\";","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"#!/usr/bin/env bash","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"#include <stdio.h>","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// first name of the user","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"# Next steps","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"## Getting Started","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// Workaround for https://github.com/foo/bar/issues/123: DNS rebinding","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"/// Returns an iterator over live entries.","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// Add adds x to the set.","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// NewClient creates a new Client.","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"# -*- coding: utf-8 -*-","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"/* eslint-disable no-console */","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"const spread = [...items];","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"x-- // decrementing in C","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"--first-flag","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"if (a && b) return;","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// add validation for negative amounts, rejecting below MIN_CENTS","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// handles edge case where header spans two chunks (see #88)","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Great question! The bug is in auth."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Sure, I can do that."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"You're absolutely right about the cache."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"I'd be happy to refactor that."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"This should fix it. Hope this helps!"}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Let me know if you need anything else."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Feel free to ask about the edge cases."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"I'm happy to clarify the tradeoffs."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Let me walk you through the changes."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"It's worth noting that the cache is cold."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"It is important to note that this changes the API."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"You might want to consider using a mutex."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"I apologize for the confusion."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Oops, that test failed."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Would you like me to continue?"}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"Certainly! Here's the refactor."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"This should work now."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"It seems to pass locally."}
+{"rule":"no-prose-slop","source":"text","expect":true,"snippet":"I'm confident this fixes the race."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"The question is whether we cache at all."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"Absolutely not."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"Sure enough, the test fails on line 42."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"The user asked a good question about locking."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"Happy path testing covers the success case."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"This helps the optimizer inline the call."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"Let me see the log output first."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"It is important to notify users before rotation."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"Right: the absolute path is wrong."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"I would be surprised if the cache survives restart."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"Note that the lock is re-entrant."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"Tests pass: 25 slop matched, 19 legit clean."}
+{"rule":"no-prose-slop","source":"text","expect":false,"snippet":"The fix probably belongs in the parser, not the lexer."}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"Fix auth — improve token handling\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -am \"wip\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"various improvements\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"Cleanup.\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"minor fixes\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"$(cat <<EOF\nAdd cache\n\nRanges use 2019–2021 semantics\nEOF\n)\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"gh pr create --title \"Refactor session tree — part 2\" --body \"...\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"git commit -m \"Fix TOCTOU race in session reload\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"git commit -m \"fix: handle null token expiry\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"git commit -m \"Update lockfile after bun upgrade\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"git commit --amend --no-edit","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"grep -rn \"—\" src/","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"git log --oneline -5","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"gh pr view 42","tool":"bash"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"expect(true).toBe(true);","tool":"edit","path":"src/auth.test.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"    assert True","tool":"edit","path":"tests/utils.py"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"it(\"handles empty input\", () => {});","tool":"edit","path":"src/auth.test.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"expect(formatPrice(100)).toBe(formatPrice(100));","tool":"edit","path":"src/auth.test.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"time.sleep(2)","tool":"edit","path":"tests/utils.py"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"page.waitForTimeout(5000);","tool":"edit","path":"e2e/login.spec.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"Thread.Sleep(1000);","tool":"edit","path":"MyApp.Tests/AuthService.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"await Task.Delay(500);","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"Assert.True(true);","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"Assert.IsTrue(true);","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"Assert.Equal(Format(x), Format(x));","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"EXPECT_TRUE(true);","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"assert(true);","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"EXPECT_EQ(parse(buf), parse(buf));","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"std::this_thread::sleep_for(2s);","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"usleep(100000);","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"expect(true, isTrue);","tool":"edit","path":"test/price_test.dart"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"test('parses header', () {});","tool":"edit","path":"test/price_test.dart"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"await Future.delayed(Duration(seconds: 1));","tool":"edit","path":"test/price_test.dart"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"expect(price(9), price(9));","tool":"edit","path":"test/price_test.dart"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"Test.Assert(true);","tool":"edit","path":"BJSON.Test/src/CommentTest.bf"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"Test.Assert(Format(x) == Format(x));","tool":"edit","path":"BJSON.Test/src/CommentTest.bf"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"[Test]\npublic static void TestFoo()\n{\n}","tool":"edit","path":"BJSON.Test/src/CommentTest.bf"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"[Fact]\npublic void Parses() { }","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"[TestMethod]\npublic async Task DoesNothing() {}","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"EXPECT_TRUE(parse(a) == parse(a));","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"expect(formatPrice(100)).toBe('$1.00');","tool":"edit","path":"src/auth.test.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"assert True == is_valid(x)","tool":"edit","path":"tests/utils.py"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"it(\"rejects expired tokens\", () => { expect(check(t)).toBe(false); });","tool":"edit","path":"src/auth.test.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"expect(parse(a)).toEqual(build(a));","tool":"edit","path":"src/auth.test.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"await waitFor(() => screen.getByText('Done'));","tool":"edit","path":"src/auth.test.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"Assert.True(result.IsValid);","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"Assert.Equal(expected, Format(x));","tool":"edit","path":"AuthTests.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"EXPECT_EQ(parse(buf), expected);","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"EXPECT_TRUE(list.empty());","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"EXPECT_TRUE(parse(a) == expected);","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"expect(result, isTrue);","tool":"edit","path":"test/price_test.dart"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"expect(price(9), '\\$9.00');","tool":"edit","path":"test/price_test.dart"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"test('rejects expired token', () { expect(check(t), isFalse); });","tool":"edit","path":"test/price_test.dart"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"Test.Assert(result case .Ok, \"Serialization should succeed\");","tool":"edit","path":"BJSON.Test/src/CommentTest.bf"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"Test.Assert(guid1 == guid2);","tool":"edit","path":"BJSON.Test/src/CommentTest.bf"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"Test.Assert(parse(a) == build(a));","tool":"edit","path":"BJSON.Test/src/CommentTest.bf"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"[Test(Name = \"SSO\")]\npublic static void TestSSO()\n{\n\tlet json = JsonString(\"a\");\n}","tool":"edit","path":"BJSON.Test/src/SSOTest.bf"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"expect(true).toBe(true);","tool":"edit","path":"src/auth.ts"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"Assert.True(true);","tool":"edit","path":"src/Auth.cs"}
+{"rule":"no-dashes","source":"text","expect":true,"snippet":"Fast — really fast"}
+{"rule":"no-dashes","source":"text","expect":true,"snippet":"Supported in 2019–2021 only."}
+{"rule":"no-dashes","source":"text","expect":false,"snippet":"kebab-case and --flags stay legal."}
+{"rule":"no-dashes","source":"tool","expect":true,"snippet":"Range spans 2019–2021 seasons.","tool":"edit","path":"README.md"}
