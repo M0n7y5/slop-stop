@@ -9,5 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - run: bun add -g @oh-my-pi/pi-coding-agent
+      # Pinned: evals exercise the omp ttsr matcher; an upstream matcher change
+      # must not break CI without a plugin diff. Bump deliberately.
+      - run: bun add -g @oh-my-pi/pi-coding-agent@17.3.8
       - run: bun evals/run.ts

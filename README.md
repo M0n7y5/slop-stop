@@ -17,7 +17,7 @@ All-in-one omp pack for better LLM output: no comment slop, no reply slop, dense
 | `rules/no-slop-tests.md` | TTSR on `edit`/`write` of test paths | Tautologies (`expect(true).toBe(true)`), empty test bodies, mirror assertions, sleep-based waits (`time.sleep`, `page.waitForTimeout`) |
 | `rules/no-dashes.md` | TTSR on `text` + `edit`/`write` | Em/en dashes anywhere |
 
-On a TTSR match the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries; tool-stream matches abort before the command executes. Contracts cost ~700 tokens per request; enforcement costs one re-generation per trigger.
+On a TTSR match the offending partial output is discarded, a corrective `<system-interrupt>` is injected, and the model retries; tool-stream matches abort before the command executes. Contracts cost ~1.3k tokens per request; enforcement costs one re-generation per trigger.
 
 ## Install
 
@@ -26,12 +26,16 @@ omp plugin link /path/to/slop-stop   # local checkout
 # or: omp install <this-repo>
 ```
 
-Recommended, so rules re-arm within a session instead of firing once:
+## Suggested configuration
+
+Without these, each TTSR rule fires once per session and then stays silent. Set them right after install so rules re-arm after a gap of clean output:
 
 ```sh
 omp config set ttsr.repeatMode after-gap
 omp config set ttsr.repeatGap 5
 ```
+
+Two footguns when writing `condition` patterns: the matcher is a JS regex engine, so use `\uXXXX` escapes for non-ASCII characters (`\x{...}` fails silently, matching nothing); and the rule loader strips literal `<!--` ... `-->` spans from the file, silently deleting everything between them across patterns, so spell those tokens with `\x2d` escapes (`<!\x2d\x2d`).
 
 ## Commands
 
@@ -46,13 +50,19 @@ echo 'Hope this helps!' | omp ttsr test --rule rules/no-prose-slop.md --file - -
 omp ttsr scan src/   # find pre-existing slop in a repo
 ```
 
-Regression corpus: `evals/cases.jsonl` replays 144 slop/legit cases through the real matcher (scope and glob gates included). Run `bun evals/run.ts` after any `condition` or `globs` change; CI runs it on every push.
+Regression corpus: `evals/cases.jsonl` replays 167 slop/legit cases through the real matcher (scope and glob gates included). Run `bun evals/run.ts` after any `condition` or `globs` change; CI runs it on every push.
 
 ## Known false-positive classes (accepted)
 
 - Ruby/YARD API docs of the form `# Returns the ...` (verb-plus-article pattern).
 - Tutorial markdown headings like `# First, install dependencies` or `# Create a new project`.
 - Quoting third-party prose that itself contains slop phrases or dashes.
+- Terse C#/C++ non-doc comments like `// Gets the current user.` (verb-plus-article pattern; use `///` doc comments, which are exempt).
+- A sleep on its own line inside a multi-line poll loop. Only a single-line `while (...)` / `for (...)` wrapper is exempt.
+
+## Known misses (accepted)
+
+- Narration inside block-comment interiors (`* Now we ...` in `/** */`): the `*` prefix collides with markdown bullets. Razor `@* *@` and HTML `<!-- -->` comments are covered.
 
 An interrupt is recoverable: the model rewrites without the flagged phrase. Tune by editing `condition` lists or narrowing `scope` globs, then re-run `bun evals/run.ts`.
 

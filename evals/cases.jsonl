@@ -142,3 +142,26 @@
 {"rule":"no-dashes","source":"text","expect":true,"snippet":"Supported in 2019–2021 only."}
 {"rule":"no-dashes","source":"text","expect":false,"snippet":"kebab-case and --flags stay legal."}
 {"rule":"no-dashes","source":"tool","expect":true,"snippet":"Range spans 2019–2021 seasons.","tool":"edit","path":"README.md"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"@* Now we render the grid *@","tool":"edit","path":"Pages/Grid.razor"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"@* rest of the code unchanged *@","tool":"edit","path":"Pages/Grid.razor"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"<!-- rest of the code unchanged -->","tool":"edit","path":"docs/a.md"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"<!-- ... -->","tool":"edit","path":"docs/a.md"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"-- ...","tool":"edit","path":"db/query.sql"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// unchanged","tool":"edit","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"// unchanged since v1 for ABI compat","tool":"edit","path":"src/abi.ts"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"@* WORKAROUND: MudBlazor 9.7 renders twice, viz issue #42 *@","tool":"edit","path":"Pages/Grid.razor"}
+{"rule":"no-slop-comments","source":"tool","expect":false,"snippet":"<!-- markdownlint-disable MD033 -->","tool":"edit","path":"docs/a.md"}
+{"rule":"no-slop-comments","source":"tool","expect":true,"snippet":"// added retry logic","tool":"write","path":"src/foo.ts"}
+{"rule":"no-slop-comments","source":"text","expect":false,"snippet":"// Now we initialize the client"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"Add cache \u2015 part 2\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"more fixes\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit -m \"bug fixes\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"git commit -m \"Add more retries to flaky LDAP init\"","tool":"bash"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"XCTAssertTrue(true)","tool":"edit","path":"Tests/AuthTests.swift"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"XCTAssertTrue(result.isValid)","tool":"edit","path":"Tests/AuthTests.swift"}
+{"rule":"no-slop-tests","source":"tool","expect":true,"snippet":"assert.ok(true);","tool":"edit","path":"test/auth.test.js"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"assert.ok(res.ok);","tool":"edit","path":"test/auth.test.js"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"while (!done) { await Task.Delay(20); }","tool":"edit","path":"MSPortal.Core.Tests/Poll.cs"}
+{"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"for (;;) { usleep(1000); }","tool":"edit","path":"tests/parser_test.cc"}
+{"rule":"no-dashes","source":"tool","expect":true,"snippet":"const label = \"2019\u20132021\";","tool":"edit","path":"src/fmt.ts"}
+{"rule":"no-dashes","source":"tool","expect":true,"snippet":"Rozsah 10\u201320 ks","tool":"write","path":"docs/sklad.md"}
