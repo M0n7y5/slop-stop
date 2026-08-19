@@ -8,7 +8,7 @@
     {
       "name": "slop-stop",
       "description": "All-in-one omp pack for better LLM output: comment discipline, dense actionable replies, and TTSR stream enforcement against comment slop, prose slop, and em-dashes",
-      "version": "0.6.0",
+      "version": "0.7.1",
       "source": "./",
       "homepage": "https://github.com/M0n7y5/slop-stop",
       "license": "MIT"
