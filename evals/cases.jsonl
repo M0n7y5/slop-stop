@@ -165,3 +165,8 @@
 {"rule":"no-slop-tests","source":"tool","expect":false,"snippet":"for (;;) { usleep(1000); }","tool":"edit","path":"tests/parser_test.cc"}
 {"rule":"no-dashes","source":"tool","expect":true,"snippet":"const label = \"2019\u20132021\";","tool":"edit","path":"src/fmt.ts"}
 {"rule":"no-dashes","source":"tool","expect":true,"snippet":"Rozsah 10\u201320 ks","tool":"write","path":"docs/sklad.md"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git -C /srv/app commit -m \"wip\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git -c user.name=x commit -m \"wip\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git commit \\\n  -m \"wip\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":true,"snippet":"git --no-pager commit -m \"Fix auth \u2013 tokens\"","tool":"bash"}
+{"rule":"no-slop-commits","source":"tool","expect":false,"snippet":"git commit -m \"Fix auth\" && echo \"a \u2014 b\"","tool":"bash"}

@@ -50,7 +50,7 @@ echo 'Hope this helps!' | omp ttsr test --rule rules/no-prose-slop.md --file - -
 omp ttsr scan src/   # find pre-existing slop in a repo
 ```
 
-Regression corpus: `evals/cases.jsonl` replays 167 slop/legit cases through the real matcher (scope and glob gates included). Run `bun evals/run.ts` after any `condition` or `globs` change; CI runs it on every push.
+Regression corpus: `evals/cases.jsonl` replays 172 slop/legit cases through the real matcher (scope and glob gates included). Run `bun evals/run.ts` after any `condition` or `globs` change; CI runs it on every push.
 
 ## Known false-positive classes (accepted)
 
